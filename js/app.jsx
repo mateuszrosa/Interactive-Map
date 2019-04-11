@@ -16,7 +16,7 @@ class WorldMap extends React.Component {
   render() {
     var Isvg = require('react-inlinesvg')
     return <div className='map'>
-            <Isvg src="../images/worldHigh3.svg"/>
+            <Isvg src="./images/worldHigh3.svg"/>
        </div>
   }
 }

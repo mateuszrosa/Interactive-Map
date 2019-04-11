@@ -11019,7 +11019,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return _react2.default.createElement(
           'div',
           { className: 'map' },
-          _react2.default.createElement(Isvg, { src: '../images/worldHigh3.svg' })
+          _react2.default.createElement(Isvg, { src: './images/worldHigh3.svg' })
         );
       }
     }]);
