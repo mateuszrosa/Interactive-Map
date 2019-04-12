@@ -6,13 +6,17 @@
 
 body {
   width: 100vw;
-  height: 80vh; }
+  height: 80vh;
+  background-image: url("/images/Background-Image-NP16.png"); }
 
 header {
   width: 100%; }
   @media (min-width: 768px) {
     header {
       font-size: 30px; } }
+  @media (min-width: 1440px) {
+    header {
+      font-size: 45px; } }
 
 .map {
   position: relative; }
@@ -39,14 +43,25 @@ header {
         top: -65px;
         left: -122px;
         width: 132vw; } }
+    @media (min-width: 1440px) {
+      .map svg {
+        transform: scale(1);
+        top: 20px;
+        left: 25%;
+        width: 70vw; } }
 
 .info {
   position: absolute;
   top: 350px;
-  width: 100%; }
+  width: 100%;
+  left: 0; }
   @media (min-width: 768px) {
     .info {
       top: 590px; } }
+  @media (min-width: 1440px) {
+    .info {
+      top: 200px;
+      left: -550px; } }
   .info img {
     width: 50%; }
 

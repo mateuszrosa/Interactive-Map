@@ -15,3 +15,9 @@
         @content;
     }
 }
+
+@mixin fourth {
+    @media (min-width: 1440px) {
+        @content;
+    }
+}

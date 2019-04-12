@@ -9,13 +9,16 @@
 body {
     width: 100vw;
     height: 80vh;
-    // background-image: url("/images/Background-Image-NP16.png");
+    background-image: url("/images/Background-Image-NP16.png");
 }
 
 header {
     width: 100%;
     @include third {
         font-size: 30px;
+    }
+    @include fourth {
+        font-size: 45px;
     }
 }
 
@@ -44,6 +47,12 @@ header {
             left: -122px;
             width: 132vw;
         }
+        @include fourth {
+            transform: scale(1);
+            top: 20px;
+            left: 25%;
+            width: 70vw;
+        }
     }
 }
 
@@ -51,8 +60,13 @@ header {
     position: absolute;
     top: 350px;
     width: 100%;
+    left: 0;
     @include third {
         top: 590px;
+    }
+    @include fourth {
+        top: 200px;
+        left: -550px;
     }
     img {
         width: 50%;
