@@ -14,6 +14,9 @@ body {
 
 header {
     width: 100%;
+    @include third {
+        font-size: 30px;
+    }
 }
 
 .map {
@@ -35,6 +38,12 @@ header {
             left: -300px;
             width: 240vw;
         }
+        @include third {
+            transform: scale(0.75);
+            top: -65px;
+            left: -122px;
+            width: 132vw;
+        }
     }
 }
 
@@ -42,6 +51,9 @@ header {
     position: absolute;
     top: 350px;
     width: 100%;
+    @include third {
+        top: 590px;
+    }
     img {
         width: 50%;
         // box-shadow: 0 0 3px 3px gray;

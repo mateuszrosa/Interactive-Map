@@ -10,6 +10,9 @@ body {
 
 header {
   width: 100%; }
+  @media (min-width: 768px) {
+    header {
+      font-size: 30px; } }
 
 .map {
   position: relative; }
@@ -30,11 +33,20 @@ header {
         transform: scale(0.4);
         left: -300px;
         width: 240vw; } }
+    @media (min-width: 768px) {
+      .map svg {
+        transform: scale(0.75);
+        top: -65px;
+        left: -122px;
+        width: 132vw; } }
 
 .info {
   position: absolute;
   top: 350px;
   width: 100%; }
+  @media (min-width: 768px) {
+    .info {
+      top: 590px; } }
   .info img {
     width: 50%; }
 
