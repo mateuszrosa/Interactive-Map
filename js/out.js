@@ -11060,7 +11060,7 @@ document.addEventListener('DOMContentLoaded', function () {
       value: function render() {
         return _react2.default.createElement(
           'div',
-          { id: 'info' },
+          { className: 'info' },
           _react2.default.createElement(
             'h3',
             null,
@@ -11117,7 +11117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             _react2.default.createElement(
               'a',
               { href: 'https://restcountries.eu/' },
-              'REST COUNTRIES'
+              ' REST COUNTRIES'
             )
           )
         );

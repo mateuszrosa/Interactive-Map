@@ -1,0 +1,11 @@
+@mixin first {
+    @media (min-width: 375px) {
+        @content;
+    }
+}
+
+@mixin second {
+    @media (min-width: 425px) {
+        @content;
+    }
+}

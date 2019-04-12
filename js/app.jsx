@@ -44,7 +44,7 @@ class Country extends React.Component {
   }
 
   render() {
-    return <div id='info'>
+    return <div className='info'>
       <h3>{this.state.header}</h3>
       <h1 className='h1'></h1>
       <h3></h3>
@@ -73,7 +73,7 @@ class Country extends React.Component {
 class Footer extends React.Component {
   render() {
     return <footer>
-      <h3>based on <a href='https://restcountries.eu/'>REST COUNTRIES</a></h3>
+      <h3>based on <a href='https://restcountries.eu/'> REST COUNTRIES</a></h3>
     </footer>
   }
 }
