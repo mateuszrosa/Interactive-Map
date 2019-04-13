@@ -49,9 +49,10 @@ header {
     @media (min-width: 1440px) {
       .map svg {
         transform: scale(1.2);
-        top: 20px;
-        left: 25%;
-        width: 70vw; } }
+        top: 80px;
+        left: 30%;
+        width: 55vw;
+        height: 70vh; } }
 
 .info {
   position: absolute;
