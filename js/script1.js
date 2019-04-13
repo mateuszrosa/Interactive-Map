@@ -43,6 +43,7 @@ map.addEventListener('mouseenter', function() {
                 item.style.fill = "#ac9d93"
             })
             this.style.fill = "gray";
+            console.log(this.getAttribute("title"));
         })
     }
 })
