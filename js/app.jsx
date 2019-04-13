@@ -13,6 +13,7 @@ class Design extends React.Component {
 }
 
 class WorldMap extends React.Component {
+  clickFunction = () => console.log(this);
   render() {
     var Isvg = require('react-inlinesvg')
     return <div className='map'>

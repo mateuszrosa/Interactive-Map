@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    console.log('object');
 
     $('div.map path').css('fill', 'black');
 
@@ -19,9 +18,16 @@ $(document).ready(function() {
     })
 
     $('body').on('click', 'path', function() {
-
+        console.log(this);
         $('div.map path').css('fill', '#AC9D93');
         $(this).css('fill', '#483E37');
+
+
+        // $('div.map path').css('z-index', '1');
+        // $(this).css('z-index', '2');
+        //
+        // $('div.map path').css('transform', 'scale(1)');
+        // $(this).css('transform', 'scale(1.03)');
 
         var title = $(this).attr('title');
         let input = $('#info > form > input').eq(0);

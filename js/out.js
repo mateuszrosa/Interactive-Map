@@ -11007,9 +11007,19 @@ document.addEventListener('DOMContentLoaded', function () {
     _inherits(WorldMap, _React$Component2);
 
     function WorldMap() {
+      var _ref;
+
+      var _temp, _this2, _ret;
+
       _classCallCheck(this, WorldMap);
 
-      return _possibleConstructorReturn(this, (WorldMap.__proto__ || Object.getPrototypeOf(WorldMap)).apply(this, arguments));
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this2 = _possibleConstructorReturn(this, (_ref = WorldMap.__proto__ || Object.getPrototypeOf(WorldMap)).call.apply(_ref, [this].concat(args))), _this2), _this2.clickFunction = function () {
+        return console.log(_this2);
+      }, _temp), _possibleConstructorReturn(_this2, _ret);
     }
 
     _createClass(WorldMap, [{

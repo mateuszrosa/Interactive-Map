@@ -1,3 +1,6 @@
+.clicked {
+  fill: #ddd !important; }
+
 * {
   margin: 0;
   padding: 0;
@@ -60,8 +63,9 @@ header {
       top: 590px; } }
   @media (min-width: 1440px) {
     .info {
+      width: 25%;
       top: 200px;
-      left: -515px;
+      left: 0;
       font-size: 20px; } }
   .info img {
     width: 50%; }
