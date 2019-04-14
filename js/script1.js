@@ -15,6 +15,14 @@ SVGInjector(mySVGsToInject, injectorOptions, function(totalSVGsInjected) {
 });
 
 const map = document.querySelector('.map');
+const name = document.querySelector("h3:nth-of-type(2)");
+const region = document.querySelector("h3:nth-of-type(3)");
+const subregion = document.querySelector("h3:nth-of-type(4)");
+const nativeName = document.querySelector("h3:nth-of-type(5)");
+const capital = document.querySelector("h3:nth-of-type(6)");
+const language = document.querySelector("h3:nth-of-type(7");
+const currency = document.querySelector("h3:nth-of-type(8)");
+const population = document.querySelector("h3:nth-of-type(9)");
 
 map.addEventListener('mouseenter', function() {
     const land = map.querySelectorAll('.land');
@@ -24,7 +32,15 @@ map.addEventListener('mouseenter', function() {
                 item.style.fill = "#ac9d93"
             })
             this.style.fill = "gray";
-            console.log(this.getAttribute("title"));
-        })
+            let value = this.getAttribute("title");
+            fetch(`https://restcountries.eu/rest/v2/name/` + value)
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    console.log(data[0].name);
+
+                })
+        });
     }
 })

@@ -18,7 +18,7 @@ $(document).ready(function() {
     })
 
     $('body').on('click', 'path', function() {
-        console.log(this);
+        // console.log(this);
         $('div.map path').css('fill', '#AC9D93');
         $(this).css('fill', '#483E37');
 
@@ -49,6 +49,7 @@ $(document).ready(function() {
             url: `https://restcountries.eu/rest/v2/name/${title}`,
             dataType: 'json'
         }).done(data => {
+            console.log(data[0].capital);
             h3_0.text("")
             h1.text('Name: ' + data[0].name)
             h3_1.text('Region: ' + data[0].region)
