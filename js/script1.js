@@ -38,8 +38,10 @@ map.addEventListener('mouseenter', function() {
                     return resp.json()
                 })
                 .then(data => {
-                    console.log(data[0].name);
-
+                    console.log(data[0].region);
+                    name.textContent = "Name: " + data[0].name;
+                    region.textContent = "Region: " + data[0].region;
+                    subregion.textContent = "Subregion: " + data[0].region;
                 })
         });
     }
