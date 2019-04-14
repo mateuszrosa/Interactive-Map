@@ -1,22 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-
-//     function fillCountry() {
-//         const lands = document.querySelectorAll(".land");
-//         for (let i = 0; i < lands.length; i++) {
-//             lands[i].addEventListener('click', function() {
-//                 this.classList.toggle("clicked");
-//                 console.log(this);
-//             })
-//         }
-//     }
-
-
-//     setTimeout(fillCountry, 500);
-
-// })
-
-
-
 let mySVGsToInject = document.querySelectorAll('img.inject-me');
 
 let injectorOptions = {
