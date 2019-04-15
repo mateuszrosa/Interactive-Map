@@ -14,10 +14,10 @@ body {
 
 header {
   width: 100%; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     header {
       font-size: 30px; } }
-  @media (min-width: 1440px) {
+  @media only screen and (min-width: 1440px) {
     header {
       font-size: 45px; } }
 
@@ -30,23 +30,23 @@ header {
     height: 80vh;
     top: -200px;
     left: -350px; }
-    @media (min-width: 375px) {
+    @media only screen and (min-width: 375px) {
       .map svg {
         transform: scale(0.35);
         left: -320px;
         width: 270vw; } }
-    @media (min-width: 425px) {
+    @media only screen and (min-width: 425px) {
       .map svg {
         transform: scale(0.4);
         left: -300px;
         width: 240vw; } }
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .map svg {
         transform: scale(0.75);
         top: -65px;
         left: -122px;
         width: 132vw; } }
-    @media (min-width: 1440px) {
+    @media only screen and (min-width: 1440px) {
       .map svg {
         transform: scale(1.2);
         top: 80px;
@@ -59,10 +59,10 @@ header {
   top: 350px;
   width: 100%;
   left: 0; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .info {
       top: 590px; } }
-  @media (min-width: 1440px) {
+  @media only screen and (min-width: 1440px) {
     .info {
       width: 25%;
       top: 200px;
@@ -70,10 +70,10 @@ header {
       font-size: 20px; } }
   .info img {
     width: 20%; }
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .info img {
         margin-top: 10px; } }
-    @media (min-width: 1440px) {
+    @media only screen and (min-width: 1440px) {
       .info img {
         width: 50%; } }
 
@@ -81,13 +81,13 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     footer {
       bottom: -90px; } }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     footer {
       bottom: -90px; } }
-  @media (min-width: 1440px) {
+  @media only screen and (min-width: 1440px) {
     footer {
       bottom: 0; } }
   footer h3 a {

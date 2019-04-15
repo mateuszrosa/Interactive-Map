@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         population.textContent = "Population: " + data[0].population.toLocaleString();
                         img.setAttribute("src", data[0].flag);
                         img.style.boxShadow = '0 0 3px 3px gray';
+
                     })
             });
         }

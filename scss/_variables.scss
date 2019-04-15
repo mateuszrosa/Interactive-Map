@@ -1,23 +1,23 @@
 @mixin first {
-    @media (min-width: 375px) {
+    @media only screen and (min-width: 375px) {
         @content;
     }
 }
 
 @mixin second {
-    @media (min-width: 425px) {
+    @media only screen and (min-width: 425px) {
         @content;
     }
 }
 
 @mixin third {
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
         @content;
     }
 }
 
 @mixin fourth {
-    @media (min-width: 1440px) {
+    @media only screen and (min-width: 1440px) {
         @content;
     }
 }
