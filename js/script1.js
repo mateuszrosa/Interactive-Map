@@ -1,20 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let mySVGsToInject = document.querySelectorAll('img.inject-me');
-
-
-    let injectorOptions = {
-        evalScripts: 'once',
-        pngFallback: 'assets/png',
-        each: function(svg) {
-            // Callback after each SVG is injected
-            console.log('SVG injected: ' + svg.getAttribute('id'));
-        }
-    };
-
-    SVGInjector(mySVGsToInject, injectorOptions, function(totalSVGsInjected) {
-        // Callback after all SVGs are injected
-        console.log('We injected ' + totalSVGsInjected + ' SVG(s)!');
-    });
 
     const map = document.querySelector('.map');
     const name = document.querySelector("h3:nth-of-type(2)");
@@ -25,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const language = document.querySelector("h3:nth-of-type(7");
     const currency = document.querySelector("h3:nth-of-type(8)");
     const population = document.querySelector("h3:nth-of-type(9)");
+    const img = document.querySelector(".info img");
 
     map.addEventListener('mouseenter', function() {
         const land = map.querySelectorAll('.land');
@@ -40,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         return resp.json()
                     })
                     .then(data => {
-                        console.log(data[0].region);
                         name.textContent = "Name: " + data[0].name;
                         region.textContent = "Region: " + data[0].region;
                         subregion.textContent = "Subregion: " + data[0].subregion;
@@ -49,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         language.textContent = "Language: " + data[0].languages[0].name;
                         currency.textContent = "Currency: " + data[0].currencies[0].code;
                         population.textContent = "Population: " + data[0].population.toLocaleString();
+                        img.setAttribute("src", data[0].flag);
+                        img.style.boxShadow = '0 0 3px 3px gray';
                     })
             });
         }

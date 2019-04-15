@@ -69,12 +69,27 @@ header {
       left: 0;
       font-size: 20px; } }
   .info img {
-    width: 50%; }
+    width: 20%; }
+    @media (min-width: 768px) {
+      .info img {
+        margin-top: 10px; } }
+    @media (min-width: 1440px) {
+      .info img {
+        width: 50%; } }
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%; }
+  @media (min-width: 768px) {
+    footer {
+      bottom: -90px; } }
+  @media (min-width: 768px) {
+    footer {
+      bottom: -90px; } }
+  @media (min-width: 1440px) {
+    footer {
+      bottom: 0; } }
   footer h3 a {
     text-decoration: none;
     color: #000; }
