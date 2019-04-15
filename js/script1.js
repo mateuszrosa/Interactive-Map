@@ -43,10 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
                         console.log(data[0].region);
                         name.textContent = "Name: " + data[0].name;
                         region.textContent = "Region: " + data[0].region;
-                        subregion.textContent = "Subregion: " + data[0].region;
+                        subregion.textContent = "Subregion: " + data[0].subregion;
+                        nativeName.textContent = "Native name: " + data[0].nativeName;
+                        capital.textContent = "Capital: " + data[0].capital;
+                        language.textContent = "Language: " + data[0].languages[0].name;
+                        currency.textContent = "Currency: " + data[0].currencies[0].code;
+                        population.textContent = "Population: " + data[0].population.toLocaleString();
                     })
             });
         }
     })
-    console.log('work');
 })
