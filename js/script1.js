@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const submit = document.querySelector("form");
     const input = document.querySelector("input");
-    console.log(input);
-    const map = document.querySelector('.map');
+    const body = document.querySelector('body');
     const name = document.querySelector("h3:nth-of-type(2)");
     const region = document.querySelector("h3:nth-of-type(3)");
     const subregion = document.querySelector("h3:nth-of-type(4)");
@@ -14,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const population = document.querySelector("h3:nth-of-type(9)");
     const img = document.querySelector(".info img");
 
-    map.addEventListener('mouseenter', function() {
-        const land = map.querySelectorAll('.land');
-        for (let i = 0; i < land.length; i++) {
-            land[i].addEventListener('click', function() {
+    body.addEventListener('mouseenter', function() {
+        const land = body.querySelectorAll('.land');
+        const event = document.createEvent("Event");
+        event.initEvent("click", true, true);
+        [...land].map(function(item) {
+            item.addEventListener('click', function(e) {
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 })
@@ -40,15 +41,17 @@ document.addEventListener("DOMContentLoaded", function() {
                         img.style.boxShadow = '0 0 3px 3px gray';
 
                     })
-            });
-        }
+            }, false);
+        })
+        input.addEventListener('click', function() {
+            input.value = "";
+        });
+        submit.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const value = input.value;
+            // console.log(document.querySelector('div.map path[title="' + value + '"]'));
+            document.querySelector('div.map path[title="' + value + '"]').dispatchEvent(event);
+        });
     })
-    input.addEventListener('click', function() {
-        input.value = "";
-    });
-    submit.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const value = input.value;
-        console.log(document.querySelector('div.map path[title="' + value + '"]'));
-    });
+
 })
