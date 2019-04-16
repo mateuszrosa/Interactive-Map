@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    const submit = document.querySelector("form");
+    const input = document.querySelector("input");
+    console.log(input);
     const map = document.querySelector('.map');
     const name = document.querySelector("h3:nth-of-type(2)");
     const region = document.querySelector("h3:nth-of-type(3)");
