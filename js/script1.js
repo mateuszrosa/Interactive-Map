@@ -43,4 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     })
+    input.addEventListener('click', function() {
+        input.value = "";
+    })
 })
