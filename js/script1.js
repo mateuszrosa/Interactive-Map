@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.initEvent("click", true, true);
         [...land].map(function(item) {
             item.addEventListener('click', function(e) {
+                input.value = "";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 })
