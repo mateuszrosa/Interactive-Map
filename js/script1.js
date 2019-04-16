@@ -45,5 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     input.addEventListener('click', function() {
         input.value = "";
-    })
+    });
+    submit.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const value = input.value;
+        console.log(document.querySelector('div.map path[title="' + value + '"]'));
+    });
 })
