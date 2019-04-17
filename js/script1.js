@@ -48,8 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
             input.value = "";
         });
         submit.addEventListener('submit', function(e) {
+            function toTitleCase(str) {
+                return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+            };
             e.preventDefault();
-            const value = input.value;
+            const value = toTitleCase(input.value);
             // console.log(document.querySelector('div.map path[title="' + value + '"]'));
             document.querySelector('div.map path[title="' + value + '"]').dispatchEvent(event);
         });
