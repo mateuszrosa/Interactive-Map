@@ -25,14 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 this.style.fill = "gray";
                 let value = this.getAttribute("title");
-                // if (value === "India") {
-                //     value = "India[1]";
-                // }
+                if (value === "South Korea") {
+                    value = "Korea (Republic of)";
+                }
+                console.log(value);
                 fetch(`https://restcountries.eu/rest/v2/name/` + value)
                     .then(resp => {
                         return resp.json()
                     })
                     .then(data => {
+                        console.log(data);
                         let country = data[0];
                         if (value === "India") {
                             country = data[1];
