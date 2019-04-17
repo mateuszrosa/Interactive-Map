@@ -25,20 +25,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 this.style.fill = "gray";
                 let value = this.getAttribute("title");
+                // if (value === "India") {
+                //     value = "India[1]";
+                // }
                 fetch(`https://restcountries.eu/rest/v2/name/` + value)
                     .then(resp => {
                         return resp.json()
                     })
                     .then(data => {
-                        name.textContent = "Name: " + data[0].name;
-                        region.textContent = "Region: " + data[0].region;
-                        subregion.textContent = "Subregion: " + data[0].subregion;
+                        let country = data[0];
+                        if (value === "India") {
+                            country = data[1];
+                        }
+                        name.textContent = "Name: " + country.name;
+                        region.textContent = "Region: " + country.region;
+                        subregion.textContent = "Subregion: " + country.subregion;
                         nativeName.textContent = "Native name: " + data[0].nativeName;
-                        capital.textContent = "Capital: " + data[0].capital;
-                        language.textContent = "Language: " + data[0].languages[0].name;
-                        currency.textContent = "Currency: " + data[0].currencies[0].code;
-                        population.textContent = "Population: " + data[0].population.toLocaleString();
-                        img.setAttribute("src", data[0].flag);
+                        capital.textContent = "Capital: " + country.capital;
+                        language.textContent = "Language: " + country.languages[0].name;
+                        currency.textContent = "Currency: " + country.currencies[0].code;
+                        population.textContent = "Population: " + country.population.toLocaleString();
+                        img.setAttribute("src", country.flag);
                         img.style.boxShadow = '0 0 3px 3px gray';
 
                     })
@@ -53,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
             };
             e.preventDefault();
             const value = toTitleCase(input.value);
-            // console.log(document.querySelector('div.map path[title="' + value + '"]'));
             document.querySelector('div.map path[title="' + value + '"]').dispatchEvent(event);
         });
     })
