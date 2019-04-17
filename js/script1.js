@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 let value = this.getAttribute("title");
                 if (value === "South Korea") {
                     value = "Korea (Republic of)";
+                } else if (value === "North Korea") {
+                    value = "Korea (Democratic People's Republic of)";
                 }
                 console.log(value);
                 fetch(`https://restcountries.eu/rest/v2/name/` + value)
