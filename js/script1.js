@@ -22,13 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.value = "Write country name:";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
-                })
+                });
                 this.style.fill = "gray";
                 let value = this.getAttribute("title");
+                console.log(value);
                 if (value === "South Korea") {
                     value = "Korea (Republic of)";
                 } else if (value === "North Korea") {
                     value = "Korea (Democratic People's Republic of)";
+                } else if (value === "Republic of Congo") {
+                    value = "Congo";
                 }
                 fetch(`https://restcountries.eu/rest/v2/name/` + value)
                     .then(resp => {
