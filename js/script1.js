@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     value = "Korea (Democratic People's Republic of)";
                 } else if (value === "Republic of Congo") {
                     value = "Congo";
+                } else if (value === "Democratic Republic of Congo") {
+                    value = "Congo (Democratic Republic of the)"
                 }
                 fetch(`https://restcountries.eu/rest/v2/name/` + value)
                     .then(resp => {
