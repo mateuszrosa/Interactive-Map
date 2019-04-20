@@ -88,6 +88,8 @@ header {
         }
     }
     input:nth-of-type(2) {
+        background-color: #fff;
+        border-radius: 5px;
         @include fourth {
             height: 28px;
             width: 100px;
