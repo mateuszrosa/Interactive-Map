@@ -35,9 +35,9 @@ header {
         position: absolute;
         transform: scale(0.3);
         width: 320vw;
-        height: 80vh;
+        height: 100vh;
         top: -200px;
-        left: -350px;
+        left: -380px;
         @include first {
             transform: scale(0.35);
             left: -320px;
@@ -121,7 +121,6 @@ footer {
             text-decoration: none;
             color: #000;
             &:hover {
-                // text-shadow: 2px 2px #FF0000;
                 color: #f00;
                 text-decoration: underline;
                 text-decoration-color: #f00;
