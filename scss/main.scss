@@ -82,6 +82,7 @@ header {
         }
     }
     input:nth-of-type(1) {
+        border-radius: 5px;
         @include fourth {
             height: 25px;
             font-size: 20px;
