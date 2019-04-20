@@ -98,7 +98,10 @@ footer {
             text-decoration: none;
             color: #000;
             &:hover {
-                text-shadow: 2px 2px #FF0000;
+                // text-shadow: 2px 2px #FF0000;
+                color: #f00;
+                text-decoration: underline;
+                text-decoration-color: #f00;
             }
         }
     }
