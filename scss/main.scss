@@ -11,14 +11,7 @@ body {
 }
 
 header {
-    color: yellow;
     width: 100%;
-    @include first {
-        color: orange;
-    }
-    @include second {
-        color: blue;
-    }
     @include third {
         font-size: 30px;
     }
