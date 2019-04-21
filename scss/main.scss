@@ -26,11 +26,11 @@ header {
     height: 100%;
     svg {
         position: absolute;
-        transform: scale(0.3);
+        transform: scale(0.35);
         width: 300vw;
         height: 100vh;
         top: -200px;
-        left: -380px;
+        left: -350px;
         @include first {
             transform: scale(0.35);
             left: -320px;
