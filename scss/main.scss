@@ -101,10 +101,10 @@ header {
 
 footer {
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
     width: 100%;
     @include third {
-        bottom: -90px;
+        bottom: -110px;
     }
     @include fourth {
         bottom: 0;
