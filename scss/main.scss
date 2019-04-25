@@ -8,6 +8,7 @@
 
 body {
     background-image: url("../images/Background-Image-NP16.png");
+    // height: 100%;
 }
 
 header {
@@ -59,7 +60,7 @@ header {
 
 .info {
     position: absolute;
-    top: 350px;
+    top: 320px;
     width: 100%;
     left: 0;
     @include third {
