@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const submit = document.querySelector("form");
     const input = document.querySelector("input");
-    const body = document.body;
+    const body = document.querySelector('body');
     const name = document.querySelector("h3:nth-of-type(2)");
     const region = document.querySelector("h3:nth-of-type(3)");
     const subregion = document.querySelector("h3:nth-of-type(4)");
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             e.preventDefault();
             const value = toTitleCase(input.value);
-            document.querySelector('div.map path[title="' + value + '"]').dispatchEvent(event);
+            document.querySelector('.map path[title="' + value + '"]').dispatchEvent(event);
         })
     })
 })
