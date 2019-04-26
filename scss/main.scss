@@ -42,10 +42,11 @@ header {
             width: 240vw;
         }
         @include third {
-            transform: scale(0.75);
-            top: -65px;
+            transform: scale(0.65);
+            top: -125px;
             left: -122px;
             width: 132vw;
+            height: 80vh;
         }
         @include fourth {
             transform: scale(1.2);
@@ -66,7 +67,8 @@ header {
         top: 350px;
     }
     @include third {
-        top: 595px;
+        top: 490px;
+        font-size: 14px;
     }
     @include fourth {
         width: 25%;
@@ -107,7 +109,7 @@ footer {
     bottom: 0;
     width: 100%;
     @include third {
-        bottom: -110px;
+        bottom: 0;
     }
     @include fourth {
         bottom: 0;
