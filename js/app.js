@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const submit = document.querySelector("form");
     const input = document.querySelector("input");
-    const body = document.querySelector('body');
+    const body = document.body;
     const name = document.querySelector("h3:nth-of-type(2)");
     const region = document.querySelector("h3:nth-of-type(3)");
     const subregion = document.querySelector("h3:nth-of-type(4)");
