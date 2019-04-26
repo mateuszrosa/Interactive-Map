@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const land = body.querySelectorAll('.land');
         const event = document.createEvent("Event");
         event.initEvent("click", true, true);
-        [...land].map(function(item) {
+        [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
                 input.value = "Write country name:";
                 land.forEach(function(item) {
