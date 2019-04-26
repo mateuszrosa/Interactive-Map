@@ -62,6 +62,9 @@ header {
     top: 310px;
     width: 100%;
     left: 0;
+    @include first {
+        top: 350px;
+    }
     @include third {
         top: 590px;
     }
