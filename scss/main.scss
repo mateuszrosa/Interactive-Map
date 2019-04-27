@@ -76,6 +76,12 @@ header {
         left: 0;
         font-size: 20px;
     }
+    h3 {
+        @include fourth {
+            text-align: left;
+            margin-left: 50px;
+        }
+    }
     img {
         width: 20%;
         margin-top: 10px;
