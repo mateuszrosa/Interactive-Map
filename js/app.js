@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             e.preventDefault();
             const value = toTitleCase(input.value);
-            document.querySelector('.map path[title="' + value + '"]').dispatchEvent(event);
+            document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
         })
     })
 })
