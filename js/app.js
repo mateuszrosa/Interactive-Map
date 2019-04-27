@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 this.style.fill = "gray";
                 let value = this.getAttribute("title");
-                console.log(value);
                 if (value === "South Korea") {
                     value = "Korea (Republic of)";
                 } else if (value === "North Korea") {
@@ -67,7 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             e.preventDefault();
             const value = toTitleCase(input.value);
-            document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
+            if (document.querySelector(`.map path[title="${value}"]`) === null) {
+                alert('Invalid country name, try again');
+            } else {
+                document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
+            }
         })
     })
 })
