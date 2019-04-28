@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         name.textContent = "Name: " + country.name;
                         region.textContent = "Region: " + country.region;
                         subregion.textContent = "Subregion: " + country.subregion;
-                        nativeName.textContent = "Native name: " + data[0].nativeName;
+                        nativeName.textContent = "Native name: " + country.nativeName;
                         capital.textContent = "Capital: " + country.capital;
                         language.textContent = "Language: " + country.languages[0].name;
                         currency.textContent = "Currency: " + country.currencies[0].code;
@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             }
             const value = toTitleCase(input.value);
+            console.log(document.querySelector(`.map path[title="${value}"]`));
             document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             input.value = "Write country name:";
 
