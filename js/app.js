@@ -59,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         input.addEventListener('click', () => {
             input.value = "";
+            name.textContent = "";
+            region.textContent = "";
+            subregion.textContent = "";
+            nativeName.textContent = "";
+            capital.textContent = "";
+            language.textContent = "";
+            currency.textContent = "";
+            population.textContent = "";
+            img.setAttribute("src", "");
+            img.style.boxShadow = '0 0 0 0';
         })
         submit.addEventListener('submit', e => {
             toTitleCase = str => {
