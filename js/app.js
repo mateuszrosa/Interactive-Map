@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const submit = document.querySelector("form");
-    const input = document.querySelector("input");
+    const inputName = document.querySelector("input");
     const body = document.querySelector('body');
     const name = document.querySelector("h3:nth-of-type(2)");
     const region = document.querySelector("h3:nth-of-type(3)");
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.initEvent("click", true, true);
         [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
-                input.value = "Write country name:";
+                inputName.value = "Write country name:";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 });
@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
             }, false);
         })
-        input.addEventListener('click', () => {
-            input.value = "";
+        inputName.addEventListener('click', () => {
+            inputName.value = "";
             infos.forEach(item => {
                 item.textContent = "";
             });
@@ -69,21 +69,20 @@ document.addEventListener('DOMContentLoaded', function() {
             img.setAttribute("src", "");
             img.style.boxShadow = '0 0 0 0';
         })
-        submit.addEventListener('submit', e => {
+        submit.addEventListener('submit', function(e) {
             e.preventDefault();
             toTitleCase = str => {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             }
-            const value = toTitleCase(input.value);
-            const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
-            console.log(selection);
-            if (selection) {
-                console.log('The element exists in the page.');
-                document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
-                input.value = "Write country name:";
+            let value1 = toTitleCase(inputName.value);
+            let selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
+            if (!selection) {
+                console.log(`'${value1}' The element does not exists in the page.`);
+                inputName.value = "Invalid country name";
             } else {
-                console.log('The element does not exists in the page.');
-                input.value = "Invalid country name";
+                console.log(`'${value1}' The element exists in the page.`);
+                document.querySelector(`.map path[title="${value1}"]`).dispatchEvent(event);
+                inputName.value = "Write country name:";
             }
         })
     })
