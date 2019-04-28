@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.initEvent("click", true, true);
         [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
-                input.value = "Write country name:";
+                // input.value = "Write country name:";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 });
@@ -70,16 +70,14 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.boxShadow = '0 0 0 0';
         })
         submit.addEventListener('submit', e => {
+            e.preventDefault();
             toTitleCase = str => {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             }
-            e.preventDefault();
             const value = toTitleCase(input.value);
-            if (document.querySelector(`.map path[title="${value}"]`) === null) {
-                input.value = "Invalid country name";
-            } else {
-                document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
-            }
+            document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
+            input.value = "Write country name:";
+
         })
     })
 })
