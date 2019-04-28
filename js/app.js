@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currency = document.querySelector("h3:nth-of-type(8)");
     const population = document.querySelector("h3:nth-of-type(9)");
     const img = document.querySelector(".info img");
+    const infos = document.querySelectorAll('.infos');
 
     body.addEventListener('mouseenter', () => {
         const land = body.querySelectorAll('.land');
@@ -59,14 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         input.addEventListener('click', () => {
             input.value = "";
-            name.textContent = "";
-            region.textContent = "";
-            subregion.textContent = "";
-            nativeName.textContent = "";
-            capital.textContent = "";
-            language.textContent = "";
-            currency.textContent = "";
-            population.textContent = "";
+            infos.forEach(item => {
+                item.textContent = "";
+            });
             img.setAttribute("src", "");
             img.style.boxShadow = '0 0 0 0';
         })
