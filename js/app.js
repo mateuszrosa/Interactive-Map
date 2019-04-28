@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.initEvent("click", true, true);
         [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
-                // input.value = "Write country name:";
+                input.value = "Write country name:";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 });
@@ -75,10 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             }
             const value = toTitleCase(input.value);
-            console.log(document.querySelector(`.map path[title="${value}"]`));
             document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             input.value = "Write country name:";
-
         })
     })
 })
