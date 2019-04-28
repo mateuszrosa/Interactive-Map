@@ -75,8 +75,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             }
             const value = toTitleCase(input.value);
-            document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
-            input.value = "Write country name:";
+            const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
+            console.log(selection);
+            if (selection) {
+                console.log('The element exists in the page.');
+                document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
+                input.value = "Write country name:";
+            } else {
+                console.log('The element does not exists in the page.');
+                input.value = "Invalid country name";
+            }
         })
     })
 })
