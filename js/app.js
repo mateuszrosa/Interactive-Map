@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
             infos.forEach(item => {
                 item.textContent = "";
             });
+            land.forEach(function(item) {
+                item.style.fill = "#ac9d93"
+            });
             img.setAttribute("src", "");
             img.style.boxShadow = '0 0 0 0';
         })
