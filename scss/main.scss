@@ -27,30 +27,29 @@ header {
     height: 100%;
     svg {
         position: absolute;
-        transform: scale(0.35);
+        transform: scale(.35);
         width: 280vw;
         height: 100vh;
         top: -200px;
         left: -325px;
         @include first {
-            transform: scale(0.35);
             left: -320px;
             width: 270vw;
         }
         @include second {
-            transform: scale(0.4);
+            transform: scale(.4);
             left: -300px;
             width: 240vw;
         }
         @include third {
-            transform: scale(0.65);
+            transform: scale(.65);
             top: -125px;
             left: -122px;
             width: 132vw;
             height: 80vh;
         }
         @include fourth {
-            transform: scale(.8);
+            transform: scale(.85);
             left: 0;
             top: -65px;
             width: 100vw;
