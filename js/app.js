@@ -67,8 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const value = toTitleCase(input.value);
             if (document.querySelector(`.map path[title="${value}"]`) === null) {
-                input.value = "";
-                alert('Invalid country name, try again');
+                input.value = "Invalid country name";
             } else {
                 document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             }
