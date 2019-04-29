@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const submit = document.querySelector("form");
-    const inputName = document.querySelector("input");
-    const body = document.querySelector('body');
-    const name = document.querySelector("h3:nth-of-type(2)");
-    const region = document.querySelector("h3:nth-of-type(3)");
-    const subregion = document.querySelector("h3:nth-of-type(4)");
-    const nativeName = document.querySelector("h3:nth-of-type(5)");
-    const capital = document.querySelector("h3:nth-of-type(6)");
-    const language = document.querySelector("h3:nth-of-type(7");
-    const currency = document.querySelector("h3:nth-of-type(8)");
-    const population = document.querySelector("h3:nth-of-type(9)");
-    const img = document.querySelector(".info img");
-    const infos = document.querySelectorAll('.infos');
+    setTimeout(function() {
+        const submit = document.querySelector("form");
+        const inputName = document.querySelector("input");
+        const body = document.querySelector('body');
+        const name = document.querySelector("h3:nth-of-type(2)");
+        const region = document.querySelector("h3:nth-of-type(3)");
+        const subregion = document.querySelector("h3:nth-of-type(4)");
+        const nativeName = document.querySelector("h3:nth-of-type(5)");
+        const capital = document.querySelector("h3:nth-of-type(6)");
+        const language = document.querySelector("h3:nth-of-type(7");
+        const currency = document.querySelector("h3:nth-of-type(8)");
+        const population = document.querySelector("h3:nth-of-type(9)");
+        const img = document.querySelector(".info img");
+        const infos = document.querySelectorAll('.infos');
 
-    body.addEventListener('mouseenter', () => {
+
         const land = body.querySelectorAll('.land');
         const event = document.createEvent("Event");
         event.initEvent("click", true, true);
@@ -69,21 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
             img.setAttribute("src", "");
             img.style.boxShadow = '0 0 0 0';
         })
-        submit.addEventListener('submit', function(e) {
+
+        function clickSubmit(e) {
             e.preventDefault();
             toTitleCase = str => {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-            }
-            let value1 = toTitleCase(inputName.value);
-            let selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
+            };
+            const value1 = toTitleCase(inputName.value);
+            const selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
             if (!selection) {
-                console.log(`'${value1}' The element does not exists in the page.`);
                 inputName.value = "Invalid country name";
+                console.log(`'${value1}' The element does not exists in the page.`);
             } else {
+                inputName.value = "Write country name:";
                 console.log(`'${value1}' The element exists in the page.`);
                 document.querySelector(`.map path[title="${value1}"]`).dispatchEvent(event);
-                inputName.value = "Write country name:";
             }
-        })
-    })
+        }
+        submit.addEventListener('submit', clickSubmit, false);
+    }, 500);
+
 })
