@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         inputName.addEventListener('click', () => {
             inputName.value = "";
+            inputName.style = "color: black";
             infos.forEach(item => {
                 item.textContent = "";
             });
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
             if (!selection) {
                 inputName.value = "Invalid country name";
+                inputName.style = "color: red";
             } else {
                 inputName.value = "Write country name:";
             }
