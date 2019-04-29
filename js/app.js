@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const submit = document.querySelector("form");
+    const inputName = document.querySelector("input");
+    const body = document.querySelector('body');
+    const name = document.querySelector("h3:nth-of-type(2)");
+    const region = document.querySelector("h3:nth-of-type(3)");
+    const subregion = document.querySelector("h3:nth-of-type(4)");
+    const nativeName = document.querySelector("h3:nth-of-type(5)");
+    const capital = document.querySelector("h3:nth-of-type(6)");
+    const language = document.querySelector("h3:nth-of-type(7");
+    const currency = document.querySelector("h3:nth-of-type(8)");
+    const population = document.querySelector("h3:nth-of-type(9)");
+    const img = document.querySelector(".info img");
+    const infos = document.querySelectorAll('.infos');
+
     setTimeout(function() {
-        const submit = document.querySelector("form");
-        const inputName = document.querySelector("input");
-        const body = document.querySelector('body');
-        const name = document.querySelector("h3:nth-of-type(2)");
-        const region = document.querySelector("h3:nth-of-type(3)");
-        const subregion = document.querySelector("h3:nth-of-type(4)");
-        const nativeName = document.querySelector("h3:nth-of-type(5)");
-        const capital = document.querySelector("h3:nth-of-type(6)");
-        const language = document.querySelector("h3:nth-of-type(7");
-        const currency = document.querySelector("h3:nth-of-type(8)");
-        const population = document.querySelector("h3:nth-of-type(9)");
-        const img = document.querySelector(".info img");
-        const infos = document.querySelectorAll('.infos');
 
 
         const land = body.querySelectorAll('.land');
@@ -80,14 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
             if (!selection) {
                 inputName.value = "Invalid country name";
-                console.log(`'${value1}' The element does not exists in the page.`);
             } else {
                 inputName.value = "Write country name:";
-                console.log(`'${value1}' The element exists in the page.`);
-                document.querySelector(`.map path[title="${value1}"]`).dispatchEvent(event);
             }
         }
-        submit.addEventListener('submit', clickSubmit, false);
+        submit.addEventListener('submit', clickSubmit);
     }, 500);
 
 })
