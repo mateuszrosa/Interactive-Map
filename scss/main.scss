@@ -56,11 +56,19 @@ header {
             width: 100vw;
         }
         @include fifth {
+            transform: scale(1);
+            top: 80px;
+            left: 25%;
+            width: 70vw;
+            height: 70vh;
+        }
+        @include sixth {
             transform: scale(1.2);
             top: 80px;
             left: 30%;
             width: 55vw;
             height: 70vh;
+            border: 1px solid black;
         }
     }
 }

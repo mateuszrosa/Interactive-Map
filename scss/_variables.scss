@@ -28,6 +28,12 @@
     }
 }
 
+@mixin sixth {
+    @media only screen and (min-width: 1824px) {
+        @content;
+    }
+}
+
 .clicked {
     fill: #ddd !important;
 }
