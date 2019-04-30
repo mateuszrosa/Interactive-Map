@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
                 inputName.value = "Write country name:";
+                inputName.style = "color: black";
                 land.forEach(function(item) {
                     item.style.fill = "#ac9d93"
                 });
