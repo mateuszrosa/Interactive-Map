@@ -76,16 +76,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function clickSubmit(e) {
             e.preventDefault();
+            console.log('click');
             toTitleCase = str => {
                 return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
             };
-            const value1 = toTitleCase(inputName.value);
-            const selection = document.querySelector(`.map path[title="${value1}"]`) !== null;
+            const value = toTitleCase(inputName.value);
+            const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
             if (!selection) {
                 inputName.value = "Invalid country name";
                 inputName.style = "color: red";
             } else {
                 inputName.value = "Write country name:";
+                document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             }
         }
         submit.addEventListener('submit', clickSubmit);
