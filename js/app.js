@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const img = document.querySelector(".info img");
     const infos = document.querySelectorAll('.infos');
 
-
-    setTimeout(function() {
+    function worldMap() {
         const land = body.querySelectorAll('.land');
         const event = document.createEvent("Event");
         event.initEvent("click", true, true);
@@ -97,7 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
         markingCountry()
         inputName.addEventListener('click', byInput);
         submit.addEventListener('submit', clickSubmit);
+    }
 
+    setTimeout(function() {
+        worldMap();
     }, 500);
 
 })
