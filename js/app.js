@@ -62,8 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, false);
         })
 
-
-        inputName.addEventListener('click', () => {
+        function byInput() {
             inputName.value = "";
             inputName.style = "color: black";
             infos.forEach(item => {
@@ -74,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             img.setAttribute("src", "");
             img.style.boxShadow = '0 0 0 0';
-        })
+        }
 
-        submit.addEventListener('submit', function(e) {
+        function clickSubmit(e) {
             e.preventDefault();
             console.log('click');
             toTitleCase = str => {
@@ -86,12 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
             if (!selection) {
                 inputName.value = "Invalid country name";
-                inputName.style = "color: red";
+                // inputName.style = "color: red";
+                // inputName.style = "3px solid red";
             } else {
                 inputName.value = "Write country name:";
                 document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             }
-        })
+        }
+
+        inputName.addEventListener('click', byInput);
+        submit.addEventListener('submit', clickSubmit);
 
     }, 500);
 
