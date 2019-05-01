@@ -85,8 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
             if (!selection) {
                 inputName.value = "Invalid country name";
-                // inputName.style = "color: red";
-                // inputName.style = "3px solid red";
+                inputName.style = "color: red";
             } else {
                 inputName.value = "Write country name:";
                 document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
