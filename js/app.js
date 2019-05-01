@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const img = document.querySelector(".info img");
     const infos = document.querySelectorAll('.infos');
 
+
     setTimeout(function() {
-
-
         const land = body.querySelectorAll('.land');
         const event = document.createEvent("Event");
         event.initEvent("click", true, true);
+
         [...land].forEach(function(item) {
             item.addEventListener('click', function(e) {
                 inputName.value = "Write country name:";
@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
             }, false);
         })
+
+
         inputName.addEventListener('click', () => {
             inputName.value = "";
             inputName.style = "color: black";
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.boxShadow = '0 0 0 0';
         })
 
-        function clickSubmit(e) {
+        submit.addEventListener('submit', function(e) {
             e.preventDefault();
             console.log('click');
             toTitleCase = str => {
@@ -89,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 inputName.value = "Write country name:";
                 document.querySelector(`.map path[title="${value}"]`).dispatchEvent(event);
             }
-        }
-        submit.addEventListener('submit', clickSubmit);
+        })
+
     }, 500);
 
 })
