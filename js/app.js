@@ -64,16 +64,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function byInput() {
-            inputName.value = "";
-            inputName.style = "color: black";
-            infos.forEach(item => {
-                item.textContent = "";
-            });
-            land.forEach(function(item) {
-                item.style.fill = "#ac9d93"
-            });
-            img.setAttribute("src", "");
-            img.style.boxShadow = '0 0 0 0';
+            inputName.addEventListener('click', function() {
+                inputName.value = "";
+                inputName.style = "color: black";
+                infos.forEach(item => {
+                    item.textContent = "";
+                });
+                land.forEach(function(item) {
+                    item.style.fill = "#ac9d93"
+                });
+                img.setAttribute("src", "");
+                img.style.boxShadow = '0 0 0 0';
+            })
         }
 
         function clickSubmit(e) {
@@ -94,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         markingCountry()
-        inputName.addEventListener('click', byInput);
+        byInput();
         submit.addEventListener('submit', clickSubmit);
     }
 
