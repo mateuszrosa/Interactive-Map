@@ -32,6 +32,7 @@
         "style-loader": "^0.18.2",
         "url-loader": "^1.1.2",
         "webpack": "^3.0.0",
-        "webpack-dev-server": ">=3.1.11"
+        "webpack-dev-server": ">=3.1.11",
+        "tar": ">=4.4.2"
     }
 }
