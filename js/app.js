@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
 
-        function clickSubmit(e) {
-            submit.addEventListener('submit', function() {
+        function clickSubmit() {
+            submit.addEventListener('submit', function(e) {
                 e.preventDefault();
                 console.log('click');
                 toTitleCase = str => {
