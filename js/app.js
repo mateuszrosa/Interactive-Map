@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (value === "India") {
                                 country = data[1];
                             }
-                            name.textContent = "Name: " + country.name;
-                            region.textContent = "Region: " + country.region;
-                            subregion.textContent = "Subregion: " + country.subregion;
-                            nativeName.textContent = "Native name: " + country.nativeName;
-                            capital.textContent = "Capital: " + country.capital;
-                            language.textContent = "Language: " + country.languages[0].name;
-                            currency.textContent = "Currency: " + country.currencies[0].code;
-                            population.textContent = "Population: " + country.population.toLocaleString();
+                            name.innerHTML = `Name: <span class="inf">${country.name}</span>`
+                            region.innerHTML = `Region: <span class="inf">${country.region}</span>`
+                            subregion.innerHTML = `Subegion: <span class="inf">${country.subregion}</span>`
+                            nativeName.innerHTML = `Native: <span class="inf">${country.nativeName}</span>`
+                            capital.innerHTML = `Capital: <span class="inf">${country.capital}</span>`
+                            language.innerHTML = `Language: <span class="inf">${country.languages[0].name}</span>`
+                            currency.innerHTML = `Currency: <span class="inf">${country.currencies[0].code}</span>`
+                            population.innerHTML = `Population: <span class="inf">${country.population.toLocaleString()}</span>`
                             img.setAttribute("src", country.flag);
                             img.style.boxShadow = '0 0 3px 3px gray';
 
