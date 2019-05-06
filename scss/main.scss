@@ -85,14 +85,15 @@ header {
         font-size: 14px;
     }
     @include fourth {
-        top: 630px;
+        top: 580px;
         left: 0;
-        font-size: 20px;
+        font-size: 13px;
     }
     @include fifth {
         width: 25%;
         top: 200px;
         left: 0;
+        font-size: 20px;
     }
     h3 {
         @include fifth {
