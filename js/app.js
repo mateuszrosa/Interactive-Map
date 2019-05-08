@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const img = document.querySelector(".info img");
     const infos = document.querySelectorAll('.infos');
 
-    function worldMap() {
+    const worldMap = () => {
         const land = body.querySelectorAll('.land');
         const event = document.createEvent("Event");
         event.initEvent("click", true, true);
 
-        function markingCountry() {
-            [...land].forEach(function(item) {
-                item.addEventListener('click', function(e) {
+        const markingCountry = () => {
+            [...land].forEach(item => {
+                item.addEventListener('click', e => {
                     inputName.value = "Write country name:";
                     inputName.style = "color: black";
                     land.forEach(function(item) {
                         item.style.fill = "#ac9d93"
                     });
-                    this.style.fill = "gray";
-                    let value = this.getAttribute("title");
+                    e.target.style.fill = "gray";
+                    let value = e.target.getAttribute("title");
                     if (value === "South Korea") {
                         value = "Korea (Republic of)";
                     } else if (value === "North Korea") {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
 
-        function byInput() {
+        const byInput = () => {
             inputName.addEventListener('click', function() {
                 inputName.value = "";
                 inputName.style = "color: black";
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
 
-        function clickSubmit() {
+        const clickSubmit = () => {
             submit.addEventListener('submit', function(e) {
                 e.preventDefault();
                 toTitleCase = str => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clickSubmit();
     }
 
-    setTimeout(function() {
+    setTimeout(() => {
         worldMap();
     }, 500);
 
