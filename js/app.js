@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             name.innerHTML = `Name: <span class="inf">${country.name}</span>`
                             region.innerHTML = `Region: <span class="inf">${country.region}</span>`
                             subregion.innerHTML = `Subegion: <span class="inf">${country.subregion}</span>`
-                            nativeName.innerHTML = `Native: <span class="inf">${country.nativeName}</span>`
+                            nativeName.innerHTML = `Native name: <span class="inf">${country.nativeName}</span>`
                             capital.innerHTML = `Capital: <span class="inf">${country.capital}</span>`
                             language.innerHTML = `Language: <span class="inf">${country.languages[0].name}</span>`
                             currency.innerHTML = `Currency: <span class="inf">${country.currencies[0].code}</span>`
@@ -104,5 +104,4 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         worldMap();
     }, 500);
-
 })
