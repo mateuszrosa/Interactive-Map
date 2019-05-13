@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clickSubmit();
     }
 
-    setTimeout(() => {
+    window.setTimeout(() => {
         worldMap();
     }, 500);
 })
