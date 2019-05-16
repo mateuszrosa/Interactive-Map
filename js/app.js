@@ -57,6 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             population.innerHTML = `Population: <span class="inf">${country.population.toLocaleString()}</span>`
                             img.setAttribute("src", country.flag);
                             img.style.boxShadow = '0 0 3px 3px gray';
+                            console.log(name.textContent);
+                            if (document.querySelector("body > section.info > h3:nth-child(3) > span").textContent === "Korea (Republic of)") {
+                                document.querySelector("body > section.info > h3:nth-child(3) > span").textContent = "Republic of Korea";
+                            } else if (document.querySelector("body > section.info > h3:nth-child(3) > span").textContent === `Korea (Democratic People's Republic of)`) {
+                                document.querySelector("body > section.info > h3:nth-child(3) > span").textContent = "Democratic People's Republic of Korea";
+                            } else if (document.querySelector("body > section.info > h3:nth-child(3) > span").textContent === `Congo (Democratic Republic of the)`) {
+                                document.querySelector("body > section.info > h3:nth-child(3) > span").textContent = "Democratic Republic of the Congo";
+                            }
 
                         })
                 }, false);
