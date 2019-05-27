@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
     const submit = document.querySelector("form");
     const inputName = document.querySelector("input");
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.addEventListener('click', e => {
                     inputName.value = "Write country name:";
                     inputName.style = "color: black";
-                    land.forEach(function(item) {
+                    land.forEach(item => {
                         item.style.fill = "#ac9d93"
                     });
                     e.target.style.fill = "gray";
@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const byInput = () => {
-            inputName.addEventListener('click', function() {
+            inputName.addEventListener('click', () => {
                 inputName.value = "";
                 inputName.style = "color: black";
                 infos.forEach(item => {
                     item.textContent = "";
                 });
-                land.forEach(function(item) {
+                land.forEach(item => {
                     item.style.fill = "#ac9d93"
                 });
                 img.setAttribute("src", "");
@@ -87,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const clickSubmit = () => {
-            submit.addEventListener('submit', function(e) {
+            submit.addEventListener('submit', e => {
                 e.preventDefault();
                 toTitleCase = str => {
-                    return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+                    return str.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
                 };
                 const value = toTitleCase(inputName.value);
                 const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
