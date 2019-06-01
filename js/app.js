@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const markingCountry = () => {
             [...land].forEach(item => {
+                console.log(this);
                 item.addEventListener('click', e => {
                     inputName.value = "Write country name:";
                     inputName.style = "color: black";
