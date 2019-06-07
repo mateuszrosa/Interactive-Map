@@ -6,11 +6,20 @@ class WorldMap {
         })
     }
     getTitle(e) {
-        return e.target.getAttribute('title');
+        return e.target
+    }
+    fillCountry(country) {
+        country.style.fill = "gray"
+    }
+    fillCountries() {
+        this.map.forEach(map => {
+            map.style.fill = "#ac9d93"
+        });
     }
     startApp(e) {
         const item = this.getTitle(e);
-        console.log(item);
+        this.fillCountries();
+        this.fillCountry(item);
     }
 }
 
