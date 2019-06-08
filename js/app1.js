@@ -8,6 +8,8 @@ class WorldMap {
         this.input.addEventListener('click', this.handleInput.bind(this));
 
         this.form = document.querySelector('form');
+        this.form.addEventListener('submit', this.formSubmit.bind(this));
+
         this.name = document.querySelector('h3:nth-of-type(2)');
         this.region = document.querySelector("h3:nth-of-type(3)");
         this.subregion = document.querySelector("h3:nth-of-type(4)");
@@ -55,6 +57,9 @@ class WorldMap {
         this.img.setAttribute("src", "");
         this.img.style.boxShadow = '0 0 0 0';
         e.target.value = "";
+    }
+    formSubmit(e) {
+        e.preventDefault();
     }
     fillInfo(value) {
         fetch(`https://restcountries.eu/rest/v2/name/` + value)
