@@ -29,6 +29,8 @@ class WorldMap {
     }
     fillCountry(country) {
         country.style.fill = "gray"
+        this.input.value = "Write country name:";
+        this.input.style = "color: black";
     }
     fillCountries() {
         this.map.forEach(map => {
@@ -51,6 +53,7 @@ class WorldMap {
         this.map.forEach(map => {
             map.style.fill = "#ac9d93"
         });
+        this.input.style = "color: black";
         this.infos.forEach(info => {
             info.textContent = "";
         });
@@ -60,6 +63,12 @@ class WorldMap {
     }
     formSubmit(e) {
         e.preventDefault();
+
+        function toTitleCase(str) {
+            return str.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+        };
+        const value = toTitleCase(this.input.value);
+        console.log(value);
     }
     fillInfo(value) {
         fetch(`https://restcountries.eu/rest/v2/name/` + value)
