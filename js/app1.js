@@ -5,6 +5,8 @@ class WorldMap {
             map.addEventListener('click', this.startApp.bind(this));
         });
         this.input = document.querySelector('input');
+        this.input.addEventListener('click', this.handleInput.bind(this));
+
         this.form = document.querySelector('form');
         this.name = document.querySelector('h3:nth-of-type(2)');
         this.region = document.querySelector("h3:nth-of-type(3)");
@@ -43,15 +45,24 @@ class WorldMap {
         }
         return value;
     }
+    handleInput(e) {
+        this.map.forEach(map => {
+            map.style.fill = "#ac9d93"
+        });
+        this.infos.forEach(info => {
+            info.textContent = "";
+        });
+        this.img.setAttribute("src", "");
+        this.img.style.boxShadow = '0 0 0 0';
+        e.target.value = "";
+    }
     fillInfo(value) {
-        console.log(value);
         fetch(`https://restcountries.eu/rest/v2/name/` + value)
             .then(resp => {
                 return resp.json()
             })
             .then(data => {
                 let country = data[0];
-                console.log(country);
                 if (value === "India") {
                     country = data[1];
                 }
