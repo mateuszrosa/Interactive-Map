@@ -68,7 +68,8 @@ class WorldMap {
             return str.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
         };
         const value = toTitleCase(this.input.value);
-        console.log(value);
+        const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
+        console.log(selection);
     }
     fillInfo(value) {
         fetch(`https://restcountries.eu/rest/v2/name/` + value)
