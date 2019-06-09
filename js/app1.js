@@ -69,7 +69,10 @@ class WorldMap {
         };
         const value = toTitleCase(this.input.value);
         const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
-        console.log(selection);
+        if (!selection) {
+            this.input.value = "Invalid country name";
+            this.input.style = "color: red";
+        }
     }
     fillInfo(value) {
         fetch(`https://restcountries.eu/rest/v2/name/` + value)
