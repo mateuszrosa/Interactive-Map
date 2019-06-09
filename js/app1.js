@@ -50,6 +50,7 @@ class WorldMap {
         return value;
     }
     handleInput(e) {
+        console.log(this);
         this.map.forEach(map => {
             map.style.fill = "#ac9d93"
         });
@@ -72,6 +73,9 @@ class WorldMap {
         if (!selection) {
             this.input.value = "Invalid country name";
             this.input.style = "color: red";
+        } else {
+            this.input = "Write country name:";
+            this.fillInfo(value);
         }
     }
     fillInfo(value) {
