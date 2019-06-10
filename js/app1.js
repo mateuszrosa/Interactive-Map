@@ -29,7 +29,8 @@ class WorldMap {
     }
     fillCountry(country) {
         country.style.fill = "gray"
-        this.input.value = "Write country name:";
+        console.log(this.input);
+        this.input.placeholder = "Write country name:";
         this.input.style = "color: black";
     }
     fillCountries() {
@@ -50,17 +51,16 @@ class WorldMap {
         return value;
     }
     handleInput(e) {
-        console.log(this);
         this.map.forEach(map => {
             map.style.fill = "#ac9d93"
         });
-        this.input.style = "color: black";
+        this.input.classList.remove('placeholder');
         this.infos.forEach(info => {
             info.textContent = "";
         });
         this.img.setAttribute("src", "");
         this.img.style.boxShadow = '0 0 0 0';
-        e.target.value = "";
+        e.target.placeholder = "";
     }
     toTitleCase(string) {
         return string.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
@@ -68,14 +68,15 @@ class WorldMap {
     formSubmit(e) {
         e.preventDefault();
         const value = this.toTitleCase(this.input.value);
-        console.log(value);
         const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
         if (!selection) {
-            this.input.value = "Invalid country name";
-            this.input.style = "color: red";
+            this.input.value = "";
+            this.input.placeholder = "Invalid country name";
+            this.input.classList.add('placeholder');
         } else {
-            this.input = "Write country name:";
+            this.input.placeholder = "Write country name:";
             this.fillInfo(value);
+            this.input.value = ""
         }
     }
     fillInfo(value) {
@@ -110,6 +111,7 @@ class WorldMap {
 
     }
     startApp(e) {
+        this.input.classList.remove('placeholder');
         const item = this.getLand(e);
         const title = this.getTitle(e);
         const value = this.checkValue(title)
