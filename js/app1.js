@@ -62,13 +62,13 @@ class WorldMap {
         this.img.style.boxShadow = '0 0 0 0';
         e.target.value = "";
     }
+    toTitleCase(string) {
+        return string.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    }
     formSubmit(e) {
         e.preventDefault();
-
-        function toTitleCase(str) {
-            return str.replace(/\w\S*/g, txt => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-        };
-        const value = toTitleCase(this.input.value);
+        const value = this.toTitleCase(this.input.value);
+        console.log(value);
         const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
         if (!selection) {
             this.input.value = "Invalid country name";
