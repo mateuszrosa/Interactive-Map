@@ -28,8 +28,7 @@ class WorldMap {
         return e.target.getAttribute('title');
     }
     fillCountry(country) {
-        country.style.fill = "gray"
-        console.log(this.input);
+        country.style.fill = "gray";
         this.input.placeholder = "Write country name:";
         this.input.style = "color: black";
     }
@@ -68,6 +67,7 @@ class WorldMap {
     formSubmit(e) {
         e.preventDefault();
         const value = this.toTitleCase(this.input.value);
+        const item = document.querySelector(`.map path[title="${value}"]`);
         const selection = document.querySelector(`.map path[title="${value}"]`) !== null;
         if (!selection) {
             this.input.value = "";
@@ -76,6 +76,7 @@ class WorldMap {
         } else {
             this.input.placeholder = "Write country name:";
             this.fillInfo(value);
+            this.fillCountry(item);
             this.input.value = ""
         }
     }
